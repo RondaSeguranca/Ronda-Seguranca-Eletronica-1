@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: black;
+            color: white;
+            font-family: arial, sans-serif;
+            margin: 20px;
+            text-align: justify;
+        }
+
+        body h1 {
+            font-size: 26px;
+            color: #eead2d;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        body h2 {
+            font-size: 20px;
+        }
+
+        body p {
+            font-size: 15px;
+            text-indent: 10px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 65px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            border-bottom: 2px solid #eead2d;
+            z-index: 1000;
+            background-color: #000;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #eead2d;
+            font-weight: bold;
+            transition: color o.3s;
+        }
+
+        nav ul li a:hover {
+            color: none;
+        }
+
+        .hamburguer {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburguer span {
+            width: 25px;
+            height: 3px;
+            background-color: #eead2d;
+            transition: all 0.3s ease;
+        }
+
+        .banner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 60px;
+            background-color: #000;
+        }
+
+        .banner img {
+            width: 200px;
+            margin-bottom: 1px;
+        }
+
+        .accordion-button {
+            background-color: #eead2d;
+            color: black;
+            cursor: pointer;
+            padding: 14px 20px;
+            width: 100%;
+            border: 2px solid #eead2d;
+            border-radius: 8px;
+            text-align: left;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .accordion-button:hover {
+            background-color: #eead2d;
+
+        }
+
+        .accordion-content {
+            background-color: #111;
+            color: #fff;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 20px;
+            border-left: 2px solid #eead2d;
+            border-right: 2px solid #eead2d;
+            border-bottom: 2px solid #eead2d;
+            border-radius: 0 0 8px 8px;
+            margin-bottom: 20px;
+            margin-top: -20px;
+        }
+
+        .accordion-content.open {
+            padding: 12px 20px;
+        }
+
+        .accordion-content p {
+            margin: 10px 0px;
+            text-align: justify;
+        }
+
+        .accordion-content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 5px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo Ronda">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#planos">Planos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="inicio" class="banner">
+        <img src="logo.png" alt="Logo Ronda">
+        <h1>Segurança de verdade para você e sua família!</h1>
+        <p>Monitoramento 24h, rondas presenciais e soluções personalizadas. Tranquilidade e proteção em todos os momentos.</p>
+    </section>
+
+    <section id="sobre" class="sobre">
+        <h1>Sobre a Ronda</h1>
+    
+        <p>A Ronda Segurança Eletrônica é uma empresa familiar com mais de 30 anos de história, que começou com o sogro da atual dona e foi passando de geração em geração até chegar ao time dedicado de hoje. Com uma equipe especializada e equipamentos de alta tecnologia, oferecemos serviços que vão desde monitoramento eletrônico até rondas presenciais, garantindo respostas rápidas e eficazes. Nossa missão é proporcionar tranquilidade e confiança, com atendimento humanizado e soluções feitas sob medida para cada cliente. Aqui, segurança é compromisso, responsabilidade e cuidado de verdade, do nosso time para o seu.</p>
+    </section>
+
+</body>
+</html>
