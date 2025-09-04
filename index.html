@@ -265,18 +265,30 @@
             color: #ccc;
         }
 
-        a,
+        a:not(header a),
         button,
         .contact-icon {
             position: relative;
             transition: 0.3s;
         }
 
-        a:hover,
-        button:hover,
-        .contact-icon:hover {
+        a:not(header a):hover,
+        button:hover {
             box-shadow: 0 0 15px 5px #eead2d;
             transform: translateY(-2px);
+        }
+
+        header nav a {
+            color: #eead2d;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #FFD700;
+            box-shadow: none;
+            transform: none;
         }
 
         @media screen and (max-width:768px) {
