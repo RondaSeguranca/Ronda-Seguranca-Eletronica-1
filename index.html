@@ -342,6 +342,51 @@
             transition: 0.3s;
         }
 
+        .contact-form {
+            background-color: #111;
+            border: 2px solid #eead2d;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 500px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .contact-form h2 {
+            color: #eead2d;
+            margin-bottom: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #eead2d;
+            border-radius: 8px;
+            background-color: #000;
+            color: #fff;
+            font-size: 16px;
+            resize: none;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #ccc;
+        }
+
+        .contact-form button {
+            background-color: #eead2d;
+            color: #000;
+            font-size: 18px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
         a:not(header a):hover,
         button:hover {
             box-shadow: 0 0 15px 5px #eead2d;
@@ -700,7 +745,17 @@
 
     <section id="contato" class="contato">
         <h1>Contato</h1>
-        <p>Entre em contato por algum desses meios abaixo, ficaremos felizes em te ajudar!</p>
+        <div class="contact-form">
+            <h2>Envie sua mensagem diretamente por aqui!</h2>
+            <form id="direct-contact-form" action="URL_DO_SEU_SERVICO_DE_EMAIL" method="POST">
+                <input type="text" name="name" placeholder="Seu nome" required>
+                <input type="email" name="email" placeholder="Seu email" required>
+                <textarea name="message" placeholder="Sua mensagem" rows="5" required></textarea>
+                <button type="submit">Enviar Mensagem</button>
+                <p id="form-feedback" style="display:none;"></p>
+            </form>
+        </div>
+        <p>Ou entre em contato por algum desses meios abaixo, ficaremos felizes em te ajudar!</p>
         <div class="contacts-container">
 
             <a href="https://wa.me/555195369298" target="_blank" class="contact-card">
@@ -781,6 +836,31 @@
             } else {
                 window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`, '_blank');
             }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init("GnHEV0UjBnMZzXCBX");
+
+        const form = document.getElementById("direct-contact-form");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // impede o reload da página
+
+            emailjs.sendForm("service_8ic7w3v", "template_tepdc9s", this)
+                .then(() => {
+                    const feedback = document.getElementById("form-feedback");
+                    feedback.style.display = "block";
+                    feedback.style.color = "#eead2d";
+                    feedback.innerText = "Mensagem enviada com sucesso! ✅";
+                    form.reset();
+                }, (err) => {
+                    const feedback = document.getElementById("form-feedback");
+                    feedback.style.display = "block";
+                    feedback.style.color = "red";
+                    feedback.innerText = "Erro ao enviar mensagem. Tente novamente. ❌";
+                    console.error(err);
+                });
         });
     </script>
 
