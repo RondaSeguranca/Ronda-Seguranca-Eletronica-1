@@ -717,8 +717,7 @@
                 <p class="contact-desc">Confira nossas novidades, serviços e fotos de monitoramentos.</p>
             </a>
 
-            <a href="https://mail.google.com/mail/?view=cm&to=notafiscalronda@gmail.com" target="_blank"
-                class="contact-card">
+            <a href="#" id="email-link" class="contact-card">
                 <span class="contact-icon">✉️</span>
                 <h2>Email</h2>
                 <p class="contact-info">notafiscalronda@gmail.com</p>
@@ -762,12 +761,25 @@
 
         hamburger.addEventListener('click', (e) => {
             navLinks.classList.toggle('active');
-            e.stopPropagation(); 
+            e.stopPropagation();
         });
 
         document.addEventListener('click', (e) => {
             if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
                 navLinks.classList.remove('active');
+            }
+        });
+
+        const emailBtn = document.getElementById('email-link');
+        const email = "notafiscalronda@gmail.com";
+
+        emailBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (isMobile) {
+                window.location.href = `mailto:${email}`;
+            } else {
+                window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`, '_blank');
             }
         });
     </script>
