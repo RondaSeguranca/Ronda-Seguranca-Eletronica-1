@@ -760,8 +760,15 @@
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
 
-        hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', (e) => {
             navLinks.classList.toggle('active');
+            e.stopPropagation(); 
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
         });
     </script>
 
