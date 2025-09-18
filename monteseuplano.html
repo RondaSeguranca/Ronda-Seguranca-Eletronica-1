@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Monte seu Plano - Ronda Segurança</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #fff;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #eead2d;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 36px;
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+
+        .tab {
+            display: none;
+        }
+
+        .tab.active {
+            display: block;
+        }
+
+        .servico {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1a1a1a;
+            border: 2px solid #eead2d;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .servico:hover {
+            background: #222;
+            transform: translateY(-2px);
+        }
+
+        .servico input {
+            margin-right: 10px;
+            transform: scale(1.3);
+        }
+
+        .preco {
+            color: #eead2d;
+            font-weight: bold;
+        }
+
+        .total {
+            font-size: 22px;
+            margin-top: 20px;
+            color: #eead2d;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .caixa-resumo {
+            background: #1a1a1a;
+            border: 2px solid #eead2d;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            background: #eead2d;
+            color: #111;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ffc93c;
+            transform: scale(1.05);
+        }
+
+        .form-contato {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-contato input {
+            padding: 10px;
+            border-radius: 6px;
+            border: 2px solid #eead2d;
+            outline: none;
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        #resumo ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+        }
+
+        #resumo li {
+            background-color: #111;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin: 8px 0;
+            font-size: 18px;
+        }
+
+        #total {
+            background-color: #111;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #eead2d;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Monte seu Plano</h1>
+
+    <!-- 1ª ABA -->
+    <div class="tab active" id="step1">
+        <p>Para começar, escolha um ou mais dos serviços disponíveis abaixo:</p>
+
+        <div id="sugestoes">
+            <label class="servico">
+                <span><input type="checkbox" value="00.00" data-nome="Monitoramento de Alarmes">Monitoramento de
+                    Alarmes</span>
+                <span class="preco">R$00,00</span>
+            </label>
+
+            <label class="servico">
+                <span><input type="checkbox" value="00.00" data-nome="Monitoramento CFTV (imagens)">Monitoramento CFTV
+                    (Imagens)</span>
+                <span class="preco">R$00,00</span>
+            </label>
+
+            <label class="servico">
+                <span><input type="checkbox" value="00.00" data-nome="Rondas Periódicas">Rondas Periódicas</span>
+                <span class="preco">R$00,00</span>
+            </label>
+
+            <label class="servico">
+                <span><input type="checkbox" value="00.00" data-nome="Suporte Técnico Agendável">Suporte Técnico
+                    Agendável</span>
+                <span class="preco">R$00,00</span>
+            </label>
+
+            <label class="servico">
+                <span><input type="checkbox" value="00.00" data-nome="Alertas via WhatsApp/SMS">Alertas via
+                    WhatsApp/SMS</span>
+                <span class="preco">R$00,00</span>
+            </label>
+
+            <label class="servico">
+                <span><input type="checkbox" value="00.00" data-nome="Portaria">Portaria</span>
+                <span class="preco">R$00,00</span>
+            </label>
+
+            <label class="servico">
+                <span><input type="checkbox" value="00.00" data-nome="Zeladoria">Zeladoria</span>
+                <span class="preco">R$00,00</span>
+            </label>
+
+            <label class="servico">
+                <span><input type="checkbox" value="00.00" data-nome="Limpeza">Limpeza</span>
+                <span class="preco">R$00,00</span>
+            </label>
+
+            <label class="servico">
+                <span><input type="checkbox" value="00.00" data-nome="Aplicativo de Monitoramento">Aplicativo de
+                    Monitoramento</span>
+                <span class="preco">R$00,00</span>
+            </label>
+
+            <label class="servico">
+                <span><input type="checkbox" value="00.00" data-nome="Proteção Presencial"> Proteção Presencial p/hora
+                    (1
+                    guarda)</span>
+                <span class="preco">R$00,00</span>
+            </label>
+        </div>
+
+        <button onclick="mostrarResumo()">Próximo</button>
+    </div>
+
+    <!-- 2ª ABA -->
+    <div class="tab" id="step2">
+        <h2>Resumo do Plano:</h2>
+        <div class="caixa-resumo" id="resumo"></div>
+        <div class="total" id="total"></div>
+
+        <div class="form-contato">
+            <h3>Preencha os dados a seguir para entrarmos em contato o mais breve possível.</h3>
+            <input type="text" id="nome" placeholder="Seu nome" required>
+            <input type="tel" id="telefone" placeholder="Seu telefone" required>
+        </div>
+
+        <button onclick="enviarPlano()">Finalizar e Enviar</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+
+        emailjs.init("GnHEV0UjBnMZzXCBX");
+
+        let selecionados = [];
+
+        function mostrarResumo() {
+            selecionados = [];
+            let total = 0;
+
+            document.querySelectorAll("#sugestoes input:checked").forEach(chk => {
+                selecionados.push({ nome: chk.dataset.nome, valor: parseFloat(chk.value) });
+                total += parseFloat(chk.value);
+            });
+
+            if (selecionados.length === 0) {
+                alert("Selecione pelo menos um serviço.");
+                return;
+            }
+
+            let resumoHTML = "<ul>";
+            selecionados.forEach(s => resumoHTML += `<li>${s.nome}</li>`); // sem o valor individual
+            resumoHTML += "</ul>";
+
+            document.getElementById("resumo").innerHTML = resumoHTML;
+            document.getElementById("total").innerText = "Total: R$" + total.toFixed(2);
+
+            document.getElementById("step1").classList.remove("active");
+            document.getElementById("step2").classList.add("active");
+        }
+
+        function enviarPlano() {
+            let nome = document.getElementById("nome").value.trim();
+            let telefone = document.getElementById("telefone").value.trim();
+
+            if (!nome || !telefone) {
+                alert("Por favor, preencha seu nome e telefone.");
+                return;
+            }
+
+            let servicosLista = selecionados.map(s => `${s.nome}`).join("<br>");
+            let total = selecionados.reduce((t, s) => t + s.valor, 0).toFixed(2);
+
+            let templateParams = {
+                nome: nome,
+                telefone: telefone,
+                servicos: servicosLista,
+                total: `R$${total}`
+            };
+
+            emailjs.send("service_8ic7w3v", "template_7nulvto", templateParams)
+                .then(() => {
+                    alert("Plano enviado com sucesso! Um consultor entrará em contato.");
+                    window.location.href = "index.html";
+                }, (err) => {
+                    console.error("Erro:", err);
+                    alert("Ocorreu um erro ao enviar. Tente novamente.");
+                });
+        }
+    </script>
+</body>
+
+</html>
