@@ -1,3 +1,6 @@
+.vscode/
+!.vscode/extensions.json       # só se quiser manter o extensions.json
+
 .vscode/settings.json
 
 .DS_Store
@@ -7,5 +10,8 @@ node_modules/
 
 dist/
 build/
+
+.DS_Store
+Thumbs.db
 
 *.env
