@@ -8,16 +8,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
     <link rel="icon" href="./imagens/favicon-ronda.png" type="image/png">
     <style>
-        body {
+     body {
             font-family: Arial, sans-serif;
             background: #111;
             color: #fff;
             padding: 20px;
+            margin: 0;
+            padding-top: 85px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 65px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            border-bottom: 2px solid #eead2d;
+            z-index: 1000;
+            background-color: #000;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header a {
+            background-color: #eead2d;
+            color: #111;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-right: 50px;
+        }
+
+        header a:hover {
+            background-color: #ffc93c;
         }
 
         h1 {
             color: #eead2d;
-            margin-bottom: 20px;
+            margin: 100px 0 20px 0; /* afasta do header fixo */
             text-align: center;
             font-size: 36px;
         }
@@ -144,9 +179,14 @@
 </head>
 
 <body>
+    <body>
+    <header>
+        <img src="logo.png" alt="Logo Ronda">
+        <a href="index.html">Voltar</a>
+    </header>
+    
     <h1>Monte seu Plano</h1>
 
-    <!-- 1ª ABA -->
     <div class="tab active" id="step1">
         <p>Para começar, escolha um ou mais dos serviços disponíveis abaixo:</p>
 
