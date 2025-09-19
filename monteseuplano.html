@@ -200,8 +200,8 @@
             </label>
 
             <label class="servico">
-                <span><input type="checkbox" value="00.00" data-nome="Monitoramento CFTV (imagens)">Monitoramento CFTV
-                    (Imagens)</span>
+                <span><input type="checkbox" value="00.00" data-nome="Monitoramento CFTV ">Monitoramento CFTV
+                    </span>
                 <span class="preco">R$00,00</span>
             </label>
 
@@ -291,7 +291,7 @@
             }
 
             let resumoHTML = "<ul>";
-            selecionados.forEach(s => resumoHTML += `<li>${s.nome}</li>`); // sem o valor individual
+            selecionados.forEach(s => resumoHTML += `<li>${s.nome}</li>`); 
             resumoHTML += "</ul>";
 
             document.getElementById("resumo").innerHTML = resumoHTML;
@@ -310,7 +310,7 @@
                 return;
             }
 
-            let servicosLista = selecionados.map(s => `${s.nome}`).join("<br>");
+            let servicosLista = selecionados.map(s => `${s.nome}`).join("\n");
             let total = selecionados.reduce((t, s) => t + s.valor, 0).toFixed(2);
 
             let templateParams = {
