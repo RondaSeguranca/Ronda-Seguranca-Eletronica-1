@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
     <link rel="icon" href="./imagens/favicon-ronda.png" type="image/png">
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -294,7 +293,7 @@
         }
 
         .button {
-            display: block;            
+            display: block;
             text-decoration: none;
             background: #eead2d;
             color: #000000;
@@ -417,6 +416,21 @@
         button:hover {
             box-shadow: 0 0 15px 5px #eead2d;
             transform: translateY(-2px);
+        }
+
+        #btnTopo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background: #9b7529;
+            color: #ffffff;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
         }
 
         .footer {
@@ -764,6 +778,8 @@
 
     <footer class="footer">
         <h1>Será sempre um prazer ouvir você! Fale com a gente!</h1>
+
+        <button id="btnTopo">↑</button>
         <h2 class="footer-logo">RONDA</h2>
         <div class="footer-copy">© 2025 Ronda Segurança Eletrônica — Todos os direitos reservados.</div>
     </footer>
@@ -825,7 +841,7 @@
 
         const form = document.getElementById("direct-contact-form");
         form.addEventListener("submit", function (event) {
-            event.preventDefault(); 
+            event.preventDefault();
 
             emailjs.sendForm("service_8ic7w3v", "template_tepdc9s", this)
                 .then(() => {
@@ -842,6 +858,20 @@
                     console.error(err);
                 });
         });
+
+        window.onscroll = function () {
+            const btn = document.getElementById("btnTopo");
+            if (document.documentElement.scrollTop > 200) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+
+        // ação de voltar ao topo
+        document.getElementById("btnTopo").onclick = function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
     </script>
 
 </body>
