@@ -76,23 +76,6 @@
             color: #eead2d;
         }
 
-        nav ul.nav-links {
-            position: absolute;
-            right: -300px;
-            top: 65px;
-            flex-direction: column;
-            gap: 10px;
-            background-color: #000;
-            padding: 15px;
-            border: 2px solid #eead2d;
-            border-radius: 8px;
-            transition: right 0.4s ease;
-            display: flex;
-        }
-
-        nav ul.nav-links.active {
-            right: 20px;
-        }
 
         .hamburger {
             display: none;
@@ -105,20 +88,7 @@
             width: 25px;
             height: 3px;
             background-color: #eead2d;
-            border-radius: 2px;
-            transition: all 0.4s ease;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
+            transition: all 0.3s ease;
         }
 
         .banner {
@@ -504,8 +474,51 @@
                 display: flex;
             }
 
+            nav ul.nav-links {
+                position: absolute;
+                right: -300px;
+                /* inicia fora da tela */
+                top: 65px;
+                flex-direction: column;
+                gap: 10px;
+                background-color: #000;
+                padding: 15px;
+                border: 2px solid #eead2d;
+                border-radius: 8px;
+                transition: right 0.4s ease;
+                display: flex;
+            }
+
+            nav ul.nav-links.active {
+                right: 20px;
+                /* desliza para dentro */
+            }
+
             .hamburger {
                 display: flex;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+            }
+
+            .hamburger span {
+                width: 25px;
+                height: 3px;
+                background-color: #eead2d;
+                border-radius: 2px;
+                transition: all 0.4s ease;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
             }
         }
     </style>
@@ -771,7 +784,7 @@
         <h1>Contato</h1>
         <div class="contact-form">
             <h2>Envie sua mensagem diretamente por aqui!</h2>
-            <form id="direct-contact-form" action="smtp.gmail.com" method="POST">
+            <form id="direct-contact-form" action="URL_DO_SEU_SERVICO_DE_EMAIL" method="POST">
                 <input type="text" name="name" placeholder="Seu nome" required>
                 <input type="email" name="email" placeholder="Seu email" required>
                 <textarea name="message" placeholder="Sua mensagem" rows="5" required></textarea>
@@ -900,7 +913,7 @@
             }
         };
 
-        // ação de voltar ao topo
+
         document.getElementById("btnTopo").onclick = function () {
             window.scrollTo({ top: 0, behavior: "smooth" });
         };
