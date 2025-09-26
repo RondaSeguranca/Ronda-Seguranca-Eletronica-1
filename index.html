@@ -164,15 +164,20 @@
             background-color: #111;
         }
 
-        #contato {
+        #duvidas {
             background-color: #000;
+        }
+
+        #contato {
+            background-color: #111;
         }
 
         .sobre h1,
         .servicos h1,
         .planos h1,
         .contato h1,
-        .portifolio h1 {
+        .portifolio h1,
+        .duvidas h1 {
             font-size: 36px;
             color: #eead2d;
             margin-top: -40px;
@@ -217,6 +222,11 @@
         .contato p {
             font-size: 20px;
             text-align: center;
+        }
+
+        .contato h3 {
+            font-size: 36px;
+            margin-bottom: -29px;
         }
 
         .portifolio p {
@@ -322,7 +332,7 @@
             flex-direction: column;
             align-items: center;
             text-decoration: none;
-            background-color: #111;
+            background-color: #000000;
             border: 2px solid #eead2d;
             border-radius: 12px;
             padding: 20px;
@@ -477,7 +487,6 @@
             nav ul.nav-links {
                 position: absolute;
                 right: -300px;
-                /* inicia fora da tela */
                 top: 65px;
                 flex-direction: column;
                 gap: 10px;
@@ -491,7 +500,6 @@
 
             nav ul.nav-links.active {
                 right: 20px;
-                /* desliza para dentro */
             }
 
             .hamburger {
@@ -535,6 +543,7 @@
                 <li><a href="#planos">Planos</a></li>
                 <li><a href="#portifolio">Portifólio</a></li>
                 <li><a href="#diario-de-noticias">Notícias</a></li>
+                <li><a href="#duvidas">Duvidas Frequentes</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
             <div class="hamburger">
@@ -780,6 +789,11 @@
         </div>
     </section>
 
+<section id="duvidas" class="duvidas">
+    <p>Tem alguma pergunta? Acesse nossa página de <strong>Dúvidas Frequentes</strong> e encontre respostas rápidas para os principais questionamentos de nossos clientes.</p>
+    <a href="perguntasfrequentes.html" class="button">Ver Dúvidas Frequentes</a>
+    <p>Não encontrou a resposta que procurava? Fale conosco pelos canais de atendimento abaixo.</p>
+</section>
     <section id="contato" class="contato">
         <h1>Contato</h1>
         <div class="contact-form">
@@ -816,12 +830,12 @@
                 <p class="contact-desc">Envie suas dúvidas ou solicite orçamento diretamente por email.</p>
             </a>
 
+            <h3>Será sempre um prazer ouvir você! Fale com a gente!</h3>
+
         </div>
     </section>
 
     <footer class="footer">
-        <h1>Será sempre um prazer ouvir você! Fale com a gente!</h1>
-
         <button id="btnTopo">Voltar para o Topo</button>
         <h2 class="footer-logo">RONDA</h2>
         <div class="footer-copy">© 2025 Ronda Segurança Eletrônica — Todos os direitos reservados.</div>
