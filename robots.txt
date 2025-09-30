@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rondaseguranca.github.io/Ronda-Seguranca-Eletronica-1/sitemap.xml
